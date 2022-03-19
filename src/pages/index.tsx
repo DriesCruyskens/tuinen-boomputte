@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { css, Global } from '@emotion/react';
-import { useStaticQuery, graphql } from "gatsby"
+import { PageProps, graphql } from "gatsby"
 
 import gothamBook from '../fonts/Gotham-Book.otf';
 import gothamBold from '../fonts/Gotham-Bold.otf';
@@ -32,31 +32,41 @@ const FooterStyles = css`
 }
 `
 
-// markup
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+type DataProps = {
+  site: {
+    siteMetadata: {
+      title: string
     }
-  `)
+  }
+}
 
+// markup
+const IndexPage: React.FC<PageProps<DataProps>> = ({
+  data,
+}) => {
   return (
     <main>
-      <Global styles={globalStyle}/>
+      <Global styles={globalStyle} />
       <title>Home</title>
       <h1>
         Tuinen Boomputte
         <br />
       </h1>
       <footer css={FooterStyles}>
-          © {new Date().getFullYear()} {data.site.siteMetadata.title}
+        © {new Date().getFullYear()} {data.site.siteMetadata.title}
       </footer>
     </main>
   )
 }
+
+export const query = graphql`
+query SiteTitleQuery {
+  site {
+    siteMetadata {
+      title
+    }
+  }
+}
+`
 
 export default IndexPage
