@@ -46,9 +46,11 @@ type DataProps = {
   }
 }
 
-const IndexPage: React.FC<PageProps<DataProps>> = ({
-  data,
-}) => {
+const defaultProps: DataProps = { site: { siteMetadata: { title: '' } } };
+
+// Documentation on how to use Gatsbyjs with Typescript.
+// https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/
+const IndexPage = ({ data: { site } = defaultProps }: PageProps<DataProps>) => {
   return (
     <main>
       <Global styles={globalStyle} />
@@ -63,7 +65,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({
       <FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon>
 
       <footer css={FooterStyles}>
-        © {new Date().getFullYear()} {data.site.siteMetadata.title}
+        © {new Date().getFullYear()} {site.siteMetadata.title}
       </footer>
     </main>
   )
