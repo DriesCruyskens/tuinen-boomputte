@@ -22,7 +22,7 @@ const sectionStyle = css`
     }
 
     @media (max-width: ${BREAKPOINTS.phonePortrait}) {
-        padding: 60px 10px 60px 10px;
+        padding: 30px 10px 30px 10px;
     }
 `;
 
@@ -41,6 +41,8 @@ const titleStyle = css`
     font-size: 30px;
     color: ${COLORS.green};
     font-family: "Gotham Bold";
+    margin: 0;
+    margin-bottom: 30px;
 
     @media (max-width: ${BREAKPOINTS.tablet}) {
         text-align: center;
@@ -99,12 +101,12 @@ const activities: string[] = [
 const TertiarySection = () => {
     return (
         <section css={sectionStyle}>
-            <StaticImage css={imageStyle} alt="Garden Background" src="../images/garden1.jpeg"></StaticImage>
+            <StaticImage css={imageStyle} alt="Garden Background" src="../images/grasmat.jpeg"></StaticImage>
             <div css={contentContainerStyle}>
                 <h2 css={titleStyle}>Activiteiten</h2>
                 <ul css={css`list-style-type: none; margin: 0; padding: 0;`}>
                     {activities.map((activity: string) => {
-                        return <li css={listItemStyle}>{activity}</li>;
+                        return <li key={activity} css={listItemStyle}>{activity}</li>;
                     })}
                 </ul>
             </div>

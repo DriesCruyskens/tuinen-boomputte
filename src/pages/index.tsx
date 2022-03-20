@@ -16,6 +16,7 @@ import PrimarySection from "../components/PrimarySection";
 import SecondarySection from "../components/SecondarySection";
 import TertiarySection from "../components/TertiarySection";
 import FinalSection from "../components/FinalSection";
+import Gallery from "../components/Gallery";
 
 const globalStyle = css`
 @font-face {
@@ -65,6 +66,7 @@ const IndexPage = ({ data: { site } = defaultProps }: PageProps<DataProps>) => {
       <PrimarySection></PrimarySection>
       <SecondarySection></SecondarySection>
       <TertiarySection></TertiarySection>
+      <Gallery></Gallery>
       <FinalSection></FinalSection>
       <footer css={FooterStyles}>
         © {new Date().getFullYear()} {site.siteMetadata.title}

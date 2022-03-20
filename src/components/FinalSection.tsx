@@ -23,7 +23,7 @@ const sectionStyle = css`
     }
 
     @media (max-width: ${BREAKPOINTS.phonePortrait}) {
-        padding: 60px 10px 60px 10px;
+        padding: 30px 10px 30px 10px;
     }
 `;
 
