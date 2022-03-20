@@ -5,3 +5,9 @@ export const COLORS = {
     lightGreen: '#cce2b9',
     greenYellow: '#c7d544',
 }
+
+export const BREAKPOINTS = {
+  tablet: "991px",
+  phoneLandscape: "767px",
+  phonePortrait: "478px"
+}

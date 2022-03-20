@@ -2,7 +2,20 @@ import { css } from '@emotion/react';
 
 import { StaticImage } from "gatsby-plugin-image"
 
-import { COLORS } from '../constants/constants'
+import { BREAKPOINTS, COLORS } from '../constants/constants'
+
+const sectionStyle = css`
+    position: relative; 
+    overflow: hidden;
+    
+    @media (max-width: ${BREAKPOINTS.phoneLandscape}) {
+        padding: 20px;
+    }
+
+    @media (max-width: ${BREAKPOINTS.phonePortrait}) {
+        padding: 0;
+    }
+`;
 
 const imageStyle = css`
     display: inline-block;
@@ -27,12 +40,24 @@ const introCardStyle = css`
     max-width: 450px;
     padding: 55px;
     margin: 60px 15% 60px 60px;
+
+    @media (max-width: ${BREAKPOINTS.phoneLandscape}) {
+        margin: 60px auto 60px auto;
+        padding: 25px;
+        float: initial;
+    }
+
+    @media (max-width: ${BREAKPOINTS.phonePortrait}) {
+        margin: 60px 10px 60px 10px;
+        padding: 15px;
+    }
 `;
 
 const textStyle = css`
     font-size: 18px;
     line-height: 30px;
     margin: 0;
+    color: ${COLORS.textColor};
 `;
 
 const buttonStyle = css`
@@ -50,11 +75,15 @@ const buttonStyle = css`
     &:hover {
         background-color: ${COLORS.greenYellow}
     }
+
+    @media (max-width: ${BREAKPOINTS.phonePortrait}) {
+        font-size: 15px;
+    }
 `;
 
 const PrimarySection = () => {
     return (
-        <section css={css`position: relative; overflow: hidden;`}>
+        <section css={sectionStyle}>
             <StaticImage css={imageStyle} alt="Garden Background" src="../images/garden1.jpeg"></StaticImage>
             <div css={introCardStyle}>
                 <p css={textStyle}>Wij zijn een gepassioneerd tuinbedrijf uit het Pajottenland met oog voor detail en een neus voor efficiëntie. Ervaren en gespecialiseerd in het onderhouden van tuinen.</p>
