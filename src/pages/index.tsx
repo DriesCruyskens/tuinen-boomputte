@@ -11,9 +11,12 @@ import gothamBold from '../fonts/Gotham-Bold.otf';
 
 import { COLORS } from '../constants/constants'
 
+import Hero from '../components/Hero';
+import PrimarySection from "../components/PrimarySection";
+
 const globalStyle = css`
 @font-face {
-  font-family: "GothamBook";
+  font-family: "Gotham Book";
   src: url(${gothamBook}) format("opentype");
 }
 
@@ -23,7 +26,8 @@ const globalStyle = css`
 }
 
 body {
-  font-family: "GothamBook";
+  margin: 0;
+  font-family: "Gotham Book";
   color: '${COLORS.textColor}',
 }
 `
@@ -54,11 +58,8 @@ const IndexPage = ({ data: { site } = defaultProps }: PageProps<DataProps>) => {
   return (
     <main>
       <Global styles={globalStyle} />
-      <title>Home</title>
-      <h1>
-        Tuinen Boomputte
-        <br />
-      </h1>
+      <Hero></Hero>
+      <PrimarySection></PrimarySection>
       <FontAwesomeIcon icon={faAt} color={COLORS.green} size="2x" fixedWidth></FontAwesomeIcon>
       <FontAwesomeIcon icon={faEnvelope} color={COLORS.lightGreen}></FontAwesomeIcon>
       <FontAwesomeIcon icon={faPhone} color={COLORS.greenYellow}></FontAwesomeIcon>
