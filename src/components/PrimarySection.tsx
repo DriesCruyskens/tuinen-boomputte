@@ -88,7 +88,7 @@ const PrimarySection = () => {
             <div css={introCardStyle}>
                 <p css={textStyle}>Wij zijn een gepassioneerd tuinbedrijf uit het Pajottenland met oog voor detail en een neus voor efficiëntie. Ervaren en gespecialiseerd in het onderhouden van tuinen.</p>
                 <a css={buttonStyle} href="tel:+32472401583" >+32 4 72 40 15 83</a>
-                <a css={buttonStyle} href="mailto:tuinen.boomputte@gmail.com" >tuinen.boomputte@gmail.com</a>
+                <a css={buttonStyle} href="mailto:tuinen.boomputte@gmail.com" target="_blank">tuinen.boomputte@gmail.com</a>
             </div>
         </section>
     )
