@@ -1,7 +1,7 @@
 /** @type {import('gatsby').GatsbyConfig} */
 module.exports = {
   siteMetadata: {
-    title: `tuinen boomputte`,
+    title: `Tuinen Boomputte`,
     siteUrl: `https://www.tuinenboomputte.be`
   },
   plugins: ["gatsby-plugin-netlify-cms", 
