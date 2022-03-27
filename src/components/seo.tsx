@@ -4,15 +4,13 @@ import { useStaticQuery, graphql } from "gatsby"
 
 // https://dev.to/smetzdev/how-to-translate-the-gatsby-seo-component-to-typescript-15jl
 export function SEO({
-    description = "",
     lang = "nl",
     meta = [],
     title,
 }: SEOProps) {
     const { site } = useStaticQuery<QueryTypes>(SEOStaticQuery)
 
-    const metaDescription = description || site.siteMetadata.description
-    const defaultTitle = site.siteMetadata?.title
+    const defaultTitle = site.siteMetadata.title
 
     return (
         <Helmet
@@ -24,7 +22,7 @@ export function SEO({
             meta={[
                 {
                     name: `description`,
-                    content: metaDescription,
+                    content: site.siteMetadata.description,
                 },
                 {
                     property: `og:title`,
@@ -32,7 +30,7 @@ export function SEO({
                 },
                 {
                     property: `og:description`,
-                    content: metaDescription,
+                    content: site.siteMetadata.description,
                 },
                 {
                     property: `og:type`,
@@ -64,7 +62,7 @@ export function SEO({
                 },
                 {
                     name: `twitter:description`,
-                    content: metaDescription,
+                    content: site.siteMetadata.description,
                 },
             ].concat(meta)}>
             {/* <script type="application/ld+json">
