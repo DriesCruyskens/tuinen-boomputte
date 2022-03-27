@@ -17,6 +17,7 @@ import SecondarySection from "../components/SecondarySection";
 import TertiarySection from "../components/TertiarySection";
 import FinalSection from "../components/FinalSection";
 import Gallery from "../components/Gallery";
+import { SEO } from "../components/seo";
 
 const globalStyle = css`
 @font-face {
@@ -62,6 +63,7 @@ const IndexPage = ({ data: { site } = defaultProps }: PageProps<DataProps>) => {
   return (
     <main>
       <Global styles={globalStyle} />
+      <SEO title={site.siteMetadata.title}></SEO>
       <Hero></Hero>
       <PrimarySection></PrimarySection>
       <SecondarySection></SecondarySection>
