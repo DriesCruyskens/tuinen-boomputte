@@ -42,7 +42,7 @@ export function SEO({
                 },
                 {
                     property: `og:image`,
-                    content: `${site.siteMetadata.siteUrl}tuinen_boomputte.jpg`,
+                    content: `${site.siteMetadata.siteUrl}/tuinen_boomputte.jpg`,
                 },
                 {
                     name: `twitter:card`,
@@ -58,7 +58,7 @@ export function SEO({
                 },
                 {
                     property: `twitter:image`,
-                    content: `${site.siteMetadata.siteUrl}tuinen_boomputte.jpg`,
+                    content: `${site.siteMetadata.siteUrl}/tuinen_boomputte.jpg`,
                 },
                 {
                     name: `twitter:description`,
