@@ -32,7 +32,7 @@ const globalStyle = css`
 body {
   margin: 0;
   font-family: "Gotham Book";
-  color: '${COLORS.textColor}',
+  color: '${COLORS.textColor}';
 }
 `
 
