@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Tuinen Boomputte`,
     siteUrl: `https://www.tuinenboomputte.be`,
-    desciption: `Wij zijn een gepassioneerd tuinbedrijf uit het Pajottenland met oog voor detail en een neus voor efficiëntie. Ervaren en gespecialiseerd in het onderhouden van tuinen.`,
+    description: `Wij zijn een gepassioneerd tuinbedrijf uit het Pajottenland met oog voor detail en een neus voor efficiëntie. Ervaren en gespecialiseerd in het onderhouden van tuinen.`,
   },
   plugins: ["gatsby-plugin-netlify-cms", 
             "gatsby-plugin-emotion", 
