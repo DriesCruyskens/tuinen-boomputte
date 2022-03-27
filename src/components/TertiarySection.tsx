@@ -101,7 +101,11 @@ const activities: string[] = [
 const TertiarySection = () => {
     return (
         <section css={sectionStyle}>
-            <StaticImage css={imageStyle} alt="Garden Background" src="../images/grasmat.jpeg"></StaticImage>
+            {/* 
+                Setting borderradius on imgStyle because otherwise it does not render correctly on Safari.
+                https://stackoverflow.com/questions/66835241/gatsby-image-plugin-not-displaying-properly-on-ios-devices
+             */}
+            <StaticImage css={imageStyle} imgStyle={{ borderRadius: '50%' }} alt="Garden Background" src="../images/grasmat.jpeg"></StaticImage>
             <div css={contentContainerStyle}>
                 <h2 css={titleStyle}>Activiteiten</h2>
                 <ul css={css`list-style-type: none; margin: 0; padding: 0;`}>

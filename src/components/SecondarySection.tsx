@@ -69,7 +69,11 @@ const textStyle = css`
 const SecondarySection = () => {
     return (
         <section css={sectionStyle}>
-            <StaticImage css={imageStyle} alt="Garden Background" src="../images/bushes1.jpeg"></StaticImage>
+            {/* 
+                Setting borderradius on imgStyle because otherwise it does not render correctly on Safari.
+                https://stackoverflow.com/questions/66835241/gatsby-image-plugin-not-displaying-properly-on-ios-devices
+             */}
+            <StaticImage css={imageStyle} imgStyle={{ borderRadius: '50%' }} alt="Garden Background" src="../images/bushes1.jpeg"></StaticImage>
             <p css={textStyle}>Onze voorkeur gaat uit naar oordeelkundige, efficiënte en piekfijne uitvoering. Daarom stellen we altijd een bezoek voor zodat we zicht krijgen op het terrein en de eigenschappen ervan zoals grondsoort, zonoriëntatie, helling, en andere omgevingsfactoren.</p>
         </section>
     )
