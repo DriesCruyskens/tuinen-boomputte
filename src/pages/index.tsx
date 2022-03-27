@@ -37,7 +37,7 @@ body {
 `
 
 const FooterStyles = css`
-  margin: 50px;
+  margin: 0 50px 50px 50px;
   font-size: .7rem;
   text-align: center;
 
