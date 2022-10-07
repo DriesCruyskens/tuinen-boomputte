@@ -22,5 +22,7 @@ module.exports = {
       },
       __key: "images",
     },
+    `gatsby-plugin-sitemap`,
+    "gatsby-plugin-robots-txt",
   ],
 };
