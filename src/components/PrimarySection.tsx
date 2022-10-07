@@ -60,6 +60,11 @@ const textStyle = css`
     color: ${COLORS.textColor};
 `;
 
+const headerStyle = css`
+  font-family: "Gotham Bold";
+  margin: 10px 0 0 0;
+`;
+
 const buttonStyle = css`
     display: inline-block;
     background-color: ${COLORS.green};
@@ -86,6 +91,7 @@ const PrimarySection = () => {
         <section css={sectionStyle}>
             <StaticImage css={imageStyle} alt="Garden Background" src="../images/garden1.jpeg"></StaticImage>
             <div css={introCardStyle}>
+                <h1 css={headerStyle}>Tuinen Boomputte</h1>
                 <p css={textStyle}>Wij zijn een gepassioneerd tuinbedrijf uit het Pajottenland met oog voor detail en een neus voor efficiëntie. Ervaren en gespecialiseerd in het onderhouden van tuinen.</p>
                 <a css={buttonStyle} href="tel:+32472401583" >+32 4 72 40 15 83</a>
                 <a css={buttonStyle} href="mailto:tuinen.boomputte@gmail.com" target="_blank">tuinen.boomputte@gmail.com</a>

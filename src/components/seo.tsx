@@ -7,65 +7,72 @@ export function SEO({
     lang = "nl",
     meta = [],
     title,
-}: SEOProps) {
+}: SEOProps) {  
     const { site } = useStaticQuery<QueryTypes>(SEOStaticQuery)
 
     const defaultTitle = site.siteMetadata.title
 
+    const keywords = site.siteMetadata.keywords
+
     return (
-        <Helmet
-            htmlAttributes={{
-                lang,
-            }}
-            title={title}
-            titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
-            meta={[
-                {
-                    name: `description`,
-                    content: site.siteMetadata.description,
-                },
-                {
-                    property: `og:title`,
-                    content: title,
-                },
-                {
-                    property: `og:description`,
-                    content: site.siteMetadata.description,
-                },
-                {
-                    property: `og:type`,
-                    content: `business.business`,
-                },
-                {
-                    property: `og:url`,
-                    content: `${site.siteMetadata.siteUrl}`,
-                },
-                {
-                    property: `og:image`,
-                    content: `${site.siteMetadata.siteUrl}/tuinen_boomputte.jpg`,
-                },
-                {
-                    name: `twitter:card`,
-                    content: `summary`,
-                },
-                {
-                    name: `twitter:title`,
-                    content: title,
-                },
-                {
-                    property: `twitter:url`,
-                    content: `${site.siteMetadata.siteUrl}`,
-                },
-                {
-                    property: `twitter:image`,
-                    content: `${site.siteMetadata.siteUrl}/tuinen_boomputte.jpg`,
-                },
-                {
-                    name: `twitter:description`,
-                    content: site.siteMetadata.description,
-                },
-            ].concat(meta)}>
-            {/* <script type="application/ld+json">
+      <Helmet
+        htmlAttributes={{
+          lang,
+        }}
+        title={title}
+        titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
+        meta={[
+          {
+            name: `description`,
+            content: site.siteMetadata.description,
+          },
+          {
+            property: `og:title`,
+            content: title,
+          },
+          {
+            property: `og:description`,
+            content: site.siteMetadata.description,
+          },
+          {
+            name: `keywords`,
+            content: keywords,
+          },
+          {
+            property: `og:type`,
+            content: `business.business`,
+          },
+          {
+            property: `og:url`,
+            content: `${site.siteMetadata.siteUrl}`,
+          },
+          {
+            property: `og:image`,
+            content: `${site.siteMetadata.siteUrl}/tuinen_boomputte.jpg`,
+          },
+          {
+            name: `twitter:card`,
+            content: `summary`,
+          },
+          {
+            name: `twitter:title`,
+            content: title,
+          },
+          {
+            property: `twitter:url`,
+            content: `${site.siteMetadata.siteUrl}`,
+          },
+          {
+            property: `twitter:image`,
+            content: `${site.siteMetadata.siteUrl}/tuinen_boomputte.jpg`,
+          },
+          {
+            name: `twitter:description`,
+            content: site.siteMetadata.description,
+          },
+        ].concat(meta)}
+      >
+        {/* <script type="application/ld+json">
                 {`
                     {
                     "@context": "https://schema.org",
@@ -83,8 +90,8 @@ export function SEO({
                     }
                 `}
             </script> */}
-        </Helmet>
-    )
+      </Helmet>
+    );
 }
 
 // Types
@@ -113,6 +120,7 @@ type QueryTypes = {
             title: string
             description: string
             siteUrl: string
+            keywords: string
         }
     }
 }
@@ -125,6 +133,7 @@ const SEOStaticQuery = graphql`
         title
         description
         siteUrl
+        keywords
       }
     }
   }

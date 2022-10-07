@@ -72,7 +72,7 @@ const Gallery = () => {
 
     return (
         <section css={sectionStyle}>
-            <h2 css={titleStyle}>Gallerij</h2>
+            <h2 css={titleStyle}>Fotogalerij</h2>
             <ImageGallery images={images} />
         </section>
     )

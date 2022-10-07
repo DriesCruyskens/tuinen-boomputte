@@ -130,7 +130,7 @@ const FinalSection = () => {
         <section css={sectionStyle}>
             <StaticImage css={imageStyle} alt="Garden Background" src="../images/logo.png"></StaticImage>
             <p css={textStyle}>U zoekt een tuinman met vakkennis, aangepast en professioneel materiaal, oog voor afwerking en een eerlijke prijs?</p>
-            <p css={textStyleBold}>Contacteer ons voor een vrijblijvende offerte.</p>
+            <h2 css={textStyleBold}>Contacteer ons voor een vrijblijvende offerte.</h2>
             <div css={contactCardStyle}>
                 <div css={contactItemStyle}>
                     <FontAwesomeIcon icon={faPhone} color={COLORS.textColor}></FontAwesomeIcon>
